@@ -1,6 +1,6 @@
 // api/albums/[id]/tracks.js
-import connectDB from '../../../connectDB';
-import { getTracksByAlbumId } from '../../../../controller/albumController';
+import connectDB from '../../connectDB';
+import { getTracksByAlbumId } from '../../../controller/albumController';
 
 export default async function handler(req, res) {
   await connectDB();

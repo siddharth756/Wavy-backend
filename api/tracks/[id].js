@@ -1,5 +1,5 @@
 import connectDB from "../connectDB";
-import { getTrackById } from "../../controller/trackController";
+import { getTrackById } from "../../../controller/trackController";
 
 export default async function handler(req, res) {
   await connectDB();

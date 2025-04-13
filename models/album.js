@@ -24,4 +24,12 @@ albumSchema.pre('remove', async function (next) {
 })
 
 
-exports.Album = mongoose.model('Album', albumSchema);
+let Album;
+
+if (mongoose.models.Album) {
+  Album = mongoose.models.Album;  // Use the existing model if it exists
+} else {
+  Album = mongoose.model('Album', albumSchema);  // Create the model if it doesn't exist
+}
+
+module.exports = { Album };

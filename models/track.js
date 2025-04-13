@@ -27,4 +27,12 @@ const trackSchema = new mongoose.Schema({
     }
 },{timestamps: true});
 
-exports.Track = mongoose.model('Track',trackSchema)
+let Track;
+
+if (mongoose.models.Track) {
+  Track = mongoose.models.Track;  // Use the existing model if it exists
+} else {
+  Track = mongoose.model('Track', trackSchema);  // Create the model if it doesn't exist
+}
+
+module.exports = { Track };
